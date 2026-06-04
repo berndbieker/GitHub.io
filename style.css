@@ -1,0 +1,59 @@
+/* Grundlegendes Layout-Verhalten */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9; /* Heller Hintergrund für die gesamte Seite */
+    padding: 20px;
+}
+
+/* Der zweispaltige Container */
+.container {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #ffffff; /* Weißer Hintergrund für den Textbereich */
+    border-radius: 8px; /* Leicht abgerundete Ecken */
+    overflow: hidden; /* Sorgt dafür, dass die Ecken sauber bleiben */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05); /* Dezenter Schatten */
+}
+
+/* Die einzelnen Spalten */
+.column {
+    flex: 1;
+    padding: 30px; /* Abstand vom Text zum Rand der Spalte */
+}
+
+/* Linke Spalte (Deutsch) */
+.column-de {
+    background-color: #f4f7f6; /* Sehr helles Mint/Grau */
+    border-right: 2px solid #ccc; /* Die feste Trennlinie in der Mitte */
+}
+
+/* Rechte Spalte (Englisch) */
+.column-en {
+    background-color: #fefefe; /* Fast reines Weiß */
+}
+
+h2 {
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* Mobiles Layout für Smartphones */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    
+    .column-de {
+        border-right: none; /* Entfernt die vertikale Trennlinie auf dem Handy */
+        border-bottom: 2px solid #ccc; /* Fügt stattdessen eine horizontale Linie hinzu */
+    }
+}
